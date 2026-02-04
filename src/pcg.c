@@ -35,6 +35,10 @@ u32 prng_rand_r(prng_state* rng) {
     return (xorshifted >> rot) | (xorshifted << ((-rot) & 31));
 }
 
+f32 prng_randf_r(prng_state* rng) {
+    return (f32)prng_rand_r(rng) / (f32)UINT32_MAX;
+}
+
 void prng_seed_r(prng_state* rng, u64 initstate, u64 initseq){
     rng->state = 0U;
     rng->inc = (initseq << 1u) | 1u;
@@ -49,6 +53,10 @@ void prng_seed(u64 initstate, u64 initseq){
 
 u32 prng_rand(void){
     return prng_rand_r(&s_prng_state);
+}
+
+f32 prng_randf(void){
+    return prng_randf_r(&s_prng_state);
 }
 
 void prng_seed_auto(void){

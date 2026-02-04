@@ -6,7 +6,7 @@ int main(){
     prng_seed_auto();
 
     for (int i = 0; i < 10; i++){
-        printf("%u\n", prng_rand());
+        printf("%f\n", prng_randf());
     }
 
     return 0;
