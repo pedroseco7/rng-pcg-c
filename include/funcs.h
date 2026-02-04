@@ -9,4 +9,6 @@ void prng_seed(u64 initstate, u64 initseq); //global version
 u32 prng_rand_r(prng_state* rng);
 u32 prng_rand(void); //global version
 
+void prng_seed_auto(void);
+
 #endif // FUNCS_H
