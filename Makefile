@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS = -Iinclude -Wall -Wextra -Werror -O2
-SRC = src/test_basic.c src/pcg.c
+CFLAGS = -Iinclude -Wall -Wextra -Werror -O3 -lm
+SRC = benchmarks/bench.c src/pcg.c
 OBJ = $(SRC:.c=.o)
 EXEC = rng_pcg_test
 
